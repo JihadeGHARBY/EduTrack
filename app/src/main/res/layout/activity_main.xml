@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout principal de l'application -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Barre de recherche -->
+    <EditText
+        android:id="@+id/searchBar"
+        android:hint="Rechercher un étudiant..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:padding="10dp" />
+
+    <!-- Conteneur des filtres -->
+    <LinearLayout
+        android:id="@+id/filterLayout"
+        android:layout_below="@id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:weightSum="3">
+
+        <!-- Filtre par genre -->
+        <Spinner
+            android:id="@+id/spinnerGenre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Filtre par ville -->
+        <Spinner
+            android:id="@+id/spinnerVille"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Filtre par âge -->
+        <Spinner
+            android:id="@+id/spinnerAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Liste des étudiants (RecyclerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEtudiants"
+        android:layout_below="@id/filterLayout"
+        android:layout_above="@id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="60dp" />
+
+    <!-- Bouton d'ajout d'un nouvel étudiant -->
+    <Button
+        android:id="@+id/btnAdd"
+        android:text="Ajouter un étudiant"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

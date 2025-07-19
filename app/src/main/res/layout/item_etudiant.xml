@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout pour un élément de la liste d'étudiants -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content"
+    android:elevation="4dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <!-- Photo de l'étudiant -->
+        <ImageView
+            android:id="@+id/etudiantImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <!-- Bloc d'informations -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <!-- Ligne: Nom + bouton Supprimer -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Nom de l'étudiant -->
+                <TextView
+                    android:id="@+id/etudiantNom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nom"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_alignParentStart="true" />
+
+                <!-- Bouton de modification -->
+                <ImageButton
+                    android:id="@+id/btnModifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/btnSupprimer"
+                    android:background="@android:color/transparent"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:contentDescription="Modifier" />
+
+                <!-- Bouton de suppression -->
+                <ImageButton
+                    android:id="@+id/btnSupprimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/transparent"
+                    android:src="@android:drawable/ic_menu_delete"
+                    android:contentDescription="Supprimer"
+                    android:layout_marginStart="8dp" />
+            </RelativeLayout>
+
+            <!-- Ville de l'étudiant -->
+            <TextView
+                android:id="@+id/etudiantVille"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Module"
+                android:textSize="14sp" />
+
+            <!-- Âge de l'étudiant -->
+            <TextView
+                android:id="@+id/etudiantAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semestre"
+                android:textSize="14sp" />
+
+            <!-- Genre de l'étudiant -->
+            <TextView
+                android:id="@+id/etudiantSexe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sexe"
+                android:textSize="14sp" />
+
+            <!-- Boutons de présence/absence -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
+
+                <!-- Bouton Présent -->
+                <Button
+                    android:id="@+id/btnPresent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Présent"
+                    android:backgroundTint="#4CAF50"
+                    android:textColor="@android:color/white"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Bouton Absent -->
+                <Button
+                    android:id="@+id/btnAbsent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Absent"
+                    android:backgroundTint="#F44336"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
